@@ -6,49 +6,64 @@ namespace VariablesCS
     {
         static void Main(string[] args)
         {
-            int numberOfCupsOfCoffee = 1;
-            string fullName = "Brendan Einhorn";
-            var today = DateTime.Now;
-            var day = today.Day;
-            var month = today.Month;
-            var year = today.Year;
+            // Practicing Creating Variables
+            var numberOfCupsOfCoffee = 0;
+            var fullName = "Amanda Fox";
+            var rightNow = DateTime.Now;
 
-            Console.WriteLine($"{fullName} drank {numberOfCupsOfCoffee} cup of coffee on day {day} of month number {month} of the year {year}.");
+            Console.WriteLine($"I {fullName} drank {numberOfCupsOfCoffee} cups of coffee on {rightNow}");
 
-            Console.Write("What is your name? \n");
-            var username = Console.ReadLine();
-            if (username == "Alice")
+            // Getting Input from User
+            Console.Write("What is your name? ");
+            var userName = Console.ReadLine().ToLower();
+
+
+            // Only for Alice, Bob, and Gavin
+            if (userName == "alice")
             {
-                Console.WriteLine($"We were waiting for you, {username}. \nThank you for visiting us today!\n");
+                Console.WriteLine("Go Away Alice");
+                Environment.Exit(-1);
+            }
+            else if (userName == "bob")
+            {
+                Console.WriteLine("Hazzah! Bobby Has Arrived");
+            }
+            else if (userName == "gavin")
+            {
+                Console.WriteLine("Hey Gavin!");
+                Console.Write("Whats a cows favorite movie?");
+                var jokeAnswer = Console.ReadLine();
+                Console.WriteLine($"Moo-lan, but {jokeAnswer} was super close. Good Job!");
             }
             else
             {
-                Console.WriteLine($"Nice to meet you, {username}. \nThank you for visiting us today! \n");
+                Console.WriteLine($"Hello {userName}! Have a great day!");
             }
-            Console.Write($"{username}, please enter one number as an interger. \n");
+
+            // Practice getting different types of inputs
+            Console.Write("Give me a number: ");
             string firstNumberAsString = Console.ReadLine();
-            Console.Write($"{username}, please enter a second number as an interger. \n");
+            Console.WriteLine($"You picked: {firstNumberAsString}");
+
+            Console.Write("Give me a number: ");
             string secondNumberAsString = Console.ReadLine();
+            Console.WriteLine($"You picked: {secondNumberAsString}");
 
-            var firstOperand = int.Parse(firstNumberAsString);
-            var secondOperand = int.Parse(secondNumberAsString);
 
-            var sum = firstOperand + secondOperand;
-            Console.WriteLine($"The value of your two numbers added together is {sum}");
+            // Operand
+            var firstOperand = double.Parse(secondNumberAsString);
+            var secondOperand = double.Parse(secondNumberAsString);
 
-            var difference = firstOperand - secondOperand;
-            Console.WriteLine($"The value of your two numbers after second number subtracted from your first number is {difference}");
+            // Math
+            var sum = (firstOperand + secondOperand);
+            var difference = (secondOperand - firstOperand);
+            var product = (secondOperand * firstOperand);
+            var quotient = (firstOperand / secondOperand);
+            var remainder = (firstOperand % secondOperand);
 
-            var product = firstOperand * secondOperand;
-            Console.WriteLine($"The value of your two numbers multiplied together is {product}");
-
-            var quotient = firstOperand / secondOperand;
-            Console.WriteLine($"The value of your two numbers after the first one is divided by the second one is {quotient}");
-
-            var remainder = firstOperand % secondOperand;
-            Console.WriteLine($"When your first number is dividend by your second number, the remainder will be {remainder}");
-
+            Console.WriteLine($"The sum of your numbers is: {sum}.\nThe difference of your numbers is: {difference}.\nThe quotient of your numbers is: {quotient}.\nThe product of your numbers is: {product}.\nThe remainder of your numbers is: {remainder}. ");
 
         }
+
     }
 }
